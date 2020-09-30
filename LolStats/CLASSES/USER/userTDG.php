@@ -43,7 +43,7 @@ class UserTDG extends DBAO{
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $username, PDO::PARAM_STR, 30);
             $stmt->bindParam(2, $email, PDO::PARAM_STR, 60);
-            $stmt->bindParam(3, $password, PDO::PARAM_STR, 100);
+            $stmt->bindParam(3, $pw, PDO::PARAM_STR, 100);
             $stmt->execute();
             $resp = true;
         }

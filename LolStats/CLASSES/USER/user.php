@@ -18,14 +18,14 @@ class User
 
         if (!$res) {
             $TDG = null;
-            $_SESSION['error'] = "Aucun compte trouvé selon le email donné!";
+            $_SESSION['msg'] = "Aucun compte trouvé selon le email donné!";
             return false;
         }
 
         $this->id = $res['id'];
         $this->email = $res['email'];
         $this->userName = $res['username'];
-        $this->pw = $res['pw'];
+        $this->pw = $res['password'];
 
         $TDG = null;
         return true;
@@ -39,11 +39,11 @@ class User
             return false;
         }
 
-        if (!password_verify($pw, $this->password)) {
-            $_SESSION['error'] = "Mot de passe incorrect!";
+        if (!password_verify($pw, $this->pw)) {
+            $_SESSION['msg'] = "Mot de passe incorrect!";
             return false;
         }
-        $_SESSION["userID"] = $this->id;
+        $_SESSION["userId"] = $this->id;
         $_SESSION["userEmail"] = $this->email;
         $_SESSION["userName"] = $this->userName;
 
@@ -65,10 +65,11 @@ class User
         $TDG = UserTDG::getInstance();
         $resp = $TDG->register($username, $email, password_hash($password, PASSWORD_DEFAULT));
         if(!$resp){
-            $_SESSION['error'] = "Une erreur s'est produite lors de la création du compte";
+            $_SESSION['msg'] = "Une erreur s'est produite lors de la création du compte";
             return false;
         }
         $TDG = null;
+        $_SESSION['msg'] = "Votre compte a été créé avec succès, vous pouvez maintenant vous connecter";
         return true;
     }
 }

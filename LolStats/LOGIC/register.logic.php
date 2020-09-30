@@ -10,7 +10,7 @@
     }
     $username = $_POST['nom'];
     $email = $_POST['emailIns'];
-    $password = $_POST["pw"];
+    $password = $_POST["pwIns"];
 
     $user = new User();
 

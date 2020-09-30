@@ -1,21 +1,54 @@
+<?php
+  if(isset($_SESSION['msg'])){
+    echo '<script>alert("'.$_SESSION['msg'].'");</script>';
+    unset($_SESSION['msg']);
+  }
+?>
 <ul>
-    <a href="#">Accueil</a>
-    <a href="#">Champions</a>
-    <a href="#">Meilleurs joueurs</a>
-    <a href="#" id="ins">S'inscrire</a>
-    <a href="#" id="con" class="bg-primary">Se connecter</a>
+  <a class='link' href='#'>Accueil</a>
+  <a class='link' href='#'>Champions</a>
+  <a class='link' href='#'>Meilleurs joueurs</a>
+  <?php
+     if(isset($_SESSION['userId'])){
+       echo "<div class='dropleft show'>
+       <button class='btn btn-secondary'data-toggle='dropdown'>".
+         $_SESSION['userName']."
+       </button>
+       <div class='dropdown-menu'>
+         <a class='dropdown-item' href='#'>Mes Favoris</a>
+         <a class='dropdown-item' href='#'>Modifier mon profil</a>
+         <a class='dropdown-item' href='logout.php'>Se déconnecter</a>
+       </div>
+     </div>";
+     }
+    else{
+      echo "<a class='ins'href='#'>S'inscrire</a>
+            <a class='con bg-primary' href='#'>Se connnecter</a>";
+    }
+  ?>
 </ul>
-<div class="dropdown dropleft show">
+<div class="dropdown dropleft show droplinks">
   <button class="btn"data-toggle="dropdown" >
     <img src="IMG/hamburger.jpg" height="100"/>
   </button>
   <div class="dropdown-menu">
+
     <a class="dropdown-item" href="#">Accueil</a>
     <a class="dropdown-item" href="#">Champions</a>
     <a class="dropdown-item" href="#">Meilleurs joueurs</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" id="ins" href="#">S'inscrire</a>
-    <a class="dropdown-item" id="con" href="#">Se connnecter</a>
+    <?php
+      if(isset($_SESSION['userId'])){
+        echo "<a class='dropdown-item' href='#'>Mes Favoris</a>
+         <a class='dropdown-item' href='#'>Modifier mon profil</a>
+         <a class='dropdown-item' href='logout.php'>Se déconnecter</a>";
+      }
+      else{ 
+        echo "<a class='dropdown-item ins' href='#'>S'inscrire</a>
+        <a class='dropdown-item con' href='#'>Se connnecter</a>";
+      }
+    ?>
+    
   </div>
 </div>
 <div class="modal-ins">

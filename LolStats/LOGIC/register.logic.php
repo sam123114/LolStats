@@ -14,9 +14,6 @@
 
     $user = new User();
 
-    if($user->register($username, $email, $password)){
-        header("Location: ../index.php");
-    }
-    else
-        header("Location: ../index.php");
+    $user->register($username, $email, $password);
+    header("Location: ../index.php");
     die();

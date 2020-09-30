@@ -18,7 +18,7 @@ class User
 
         if (!$res) {
             $TDG = null;
-            $_SESSION['error'] = "No account found with given email and password!";
+            $_SESSION['error'] = "Aucun compte trouvé selon le email donné!";
             return false;
         }
 
@@ -40,7 +40,7 @@ class User
         }
 
         if (!password_verify($pw, $this->password)) {
-            $_SESSION['error'] = "No account found with given email and password!";
+            $_SESSION['error'] = "Mot de passe incorrect!";
             return false;
         }
         $_SESSION["userID"] = $this->id;
@@ -59,13 +59,13 @@ class User
     public function register($username, $email, $password)
     {
         if($this->existing_account($email)){
-            $_SESSION['error'] = "Email is already registered";
+            $_SESSION['error'] = "Ce email existe déjà!";
             return false;
         }
         $TDG = UserTDG::getInstance();
         $resp = $TDG->register($username, $email, password_hash($password, PASSWORD_DEFAULT));
         if(!$resp){
-            $_SESSION['error'] = "An error occured during the process of register";
+            $_SESSION['error'] = "Une erreur s'est produite lors de la création du compte";
             return false;
         }
         $TDG = null;

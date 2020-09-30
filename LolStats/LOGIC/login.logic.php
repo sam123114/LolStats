@@ -14,8 +14,6 @@
 
     $user = new User();
 
-    if($user->login($email, $pw))
-        header("Location: ../index.php");
-    else
-        header("Location: ../index.php");
+    $user->login($email, $pw);
+    header("Location: ../index.php");
     die();

@@ -21,7 +21,7 @@
 <div class="modal-ins">
   <div class="modal-content">
     <span id="close-ins" class="close">&times;</span>
-    <form action="#" method="post" class="modalForm" id="formIns">
+    <form action="LOGIC/register.logic.php" method="post" class="modalForm" id="formIns">
         <h1>Créer un compte</h1>
         <div class="form-group">
             <label>Nom d'utilisateur</label>
@@ -45,7 +45,7 @@
 <div class="modal-con">
   <div class="modal-content">
     <span id="close-con" class="close">&times;</span>
-    <form action="#" method="post" class="modalForm" id="formCon">
+    <form action="LOGIC/login.logic.php" method="post" class="modalForm" id="formCon">
         <h1>Connexion</h1>
         <div class="form-group">
             <label>Email</label>

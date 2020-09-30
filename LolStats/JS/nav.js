@@ -5,8 +5,8 @@ $(document).ready(() => {
     let btnIns = $("*#ins")[0];
     let btnCon = $("#con")[0];
 
-    let spanIns = $(".close-ins")[0];
-    let spanCon = $(".close-con")[0];
+    let spanIns = $("#close-ins")[0];
+    let spanCon = $("#close-con")[0];
 
     btnIns.onclick = function() {
         modalIns.style.display = "block";

@@ -82,3 +82,7 @@ ul :hover{
 .modalForm h1 {
     align-self: center;
 }
+.error {
+    color: #D9534F;
+    font-size: 15px;
+}

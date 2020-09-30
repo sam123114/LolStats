@@ -20,42 +20,42 @@
 </div>
 <div class="modal-ins">
   <div class="modal-content">
-    <span class="close-ins">&times;</span>
-    <form action="#" method="post" class="modalForm">
+    <span id="close-ins" class="close">&times;</span>
+    <form action="#" method="post" class="modalForm" id="formIns">
         <h1>Créer un compte</h1>
         <div class="form-group">
-            <label>Nom</label>
-            <input type="text" class="form-control" id="nom" placeholder="Entrez votre nom">
+            <label>Nom d'utilisateur</label>
+            <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom">
         </div>
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+            <input type="email" name="emailIns" class="form-control" placeholder="Entrez votre email">
         </div>
         <div class="form-group">
             <label>Mot de passe</label>
-            <input type="password" class="form-control" id="pw" placeholder="Entrez votre mot de passe">
+            <input type="password" id="pw" class="form-control" name="pwIns" placeholder="Entrez votre mot de passe">
         </div><div class="form-group">
             <label>Confirmation</label>
-            <input type="password" class="form-control" id="pwc" placeholder="Entrez votre mot de passe">
+            <input type="password" class="form-control" name="pwc" placeholder="Entrez votre mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary center">S'inscrire</button>
+        <button id="subIns" type="submit" class="btn btn-primary">S'inscrire</button>
     </form>
   </div>
 </div>
 <div class="modal-con">
   <div class="modal-content">
-    <span class="close-con">&times;</span>
-    <form action="#" method="post" class="modalForm">
+    <span id="close-con" class="close">&times;</span>
+    <form action="#" method="post" class="modalForm" id="formCon">
         <h1>Connexion</h1>
         <div class="form-group">
             <label>Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Entrez votre email">
+            <input type="email" class="form-control" name="emailCon" placeholder="Entrez votre email">
         </div>
         <div class="form-group">
             <label>Mot de passe</label>
-            <input type="password" class="form-control" id="pw" placeholder="Entrez votre mot de passe">
+            <input type="password" class="form-control" name="pwCon" placeholder="Entrez votre mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary center">Se connecter</button>
+        <button type="submit" class="btn btn-primary" id="submitCon">Se connecter</button>
     </form>
   </div>
 </div>

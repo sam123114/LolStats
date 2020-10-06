@@ -18,7 +18,7 @@
         <div class='dropdown-menu'>
           <a class='dropdown-item' href='#'>Mes Favoris</a>
           <a class='dropdown-item' href='#'>Modifier mon profil</a>
-          <a class='dropdown-item' href='logout.php'>Se déconnecter</a>
+          <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>
         </div>
       </div>";
       }
@@ -42,7 +42,7 @@
         if(isset($_SESSION['userId'])){
           echo "<a class='dropdown-item' href='#'>Mes Favoris</a>
           <a class='dropdown-item' href='#'>Modifier mon profil</a>
-          <a class='dropdown-item' href='logout.php'>Se déconnecter</a>";
+          <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>";
         }
         else{ 
           echo "<a class='dropdown-item ins' href='#'>S'inscrire</a>

@@ -16,11 +16,12 @@ html {
     justify-content: center;
     color: #FFF;
     position: absolute;
-    top: 75%;
+    bottom: 5%;
     right: 0px;
     left: 0px;
     margin-left: 7.5%;
-    width: 750px;
+    margin-bottom: 0;
+    width: 700px;
 }
 #rectangle {
     height: 100%;

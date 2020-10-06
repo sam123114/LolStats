@@ -1,0 +1,61 @@
+#hamburgerImg {
+    height: 75px;
+    position: absolute;
+    top: 0;
+}
+#navbar {
+    background-color: #121212;
+    height: 75px;
+    width: 100%;
+    display: flex ;
+    flex-direction: column;
+    box-shadow: 0 15px  #000;
+}
+#summonerInfo {
+    padding-top: 150px;
+    padding-left: 20%;
+    background-color: #f1f1f1;
+    opacity: 87%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#profileInfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 250px;
+    position: relative;
+    top: 0;
+    padding-bottom: 10px;
+    background-color: #FFF;
+    padding: 15px;
+    border: 1px solid #c1c1c1;
+}
+#profileIcon {
+    display: flex;
+    justify-content: center;
+}
+#level {
+    position: absolute;
+    top: 90px;
+    font-size: 20px;
+    color: #FFF;
+}
+#name {
+    font-size: 30px;
+    color: #121212;
+}
+#rankedInfo {
+    background-color: #FFF;
+    padding: 15px;
+    border: 1px solid #c1c1c1;
+    width: 350px;
+    display: flex;
+    position: relative;
+}
+#rankedText{
+    position: absolute;
+    right: 50px;
+}

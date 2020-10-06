@@ -59,7 +59,7 @@ class User
     public function register($username, $email, $password)
     {
         if($this->existing_account($email)){
-            $_SESSION['error'] = "Ce email existe déjà!";
+            $_SESSION['msg'] = "Ce email existe déjà!";
             return false;
         }
         $TDG = UserTDG::getInstance();

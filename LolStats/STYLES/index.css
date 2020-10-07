@@ -1,14 +1,11 @@
-html {
-    overflow-x:hidden;  
-   }
 #cont {
     background: url(../IMG/home.jpg) no-repeat center center; 
     background-size: cover;
     position: relative;
     height: 100%;
+    overflow-y: hidden;
     width: 100%;
 }
-
 #title {
     display: flex;
     flex-direction: column;
@@ -17,19 +14,18 @@ html {
     color: #FFF;
     position: absolute;
     bottom: 5%;
-    right: 0px;
-    left: 0px;
-    margin-left: 7.5%;
-    margin-bottom: 0;
+    left: 150px;
     width: 700px;
 }
 #rectangle {
-    height: 100%;
     width: 300px;
-    margin-left: 5%;
+    height: 100%;
     background-color: #000;
     opacity: .75;
-    z-index: -1;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 150px;
 }
 #title #text {
     display: flex;
@@ -45,6 +41,5 @@ html {
     width: 400px;
     position: absolute;
     top: 50%;
-    right: 40%;
     left: 40%;
 }

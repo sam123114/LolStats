@@ -36,13 +36,13 @@ class FavoritesTDG extends DBAO{
         return $result;
     }
 
-    public function add_favorite($userId, $playerId){
+    public function add_favorite($userId, $playerName){
         try{
             $conn = $this->connect();
             $query = 'call AddFavorite(?,?)';
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $userId, PDO::PARAM_INT, 11);
-            $stmt->bindParam(2, $playerId, PDO::PARAM_INT, 11);
+            $stmt->bindParam(2, $playerName, PDO::PARAM_STR, 50);
             $stmt->execute();
             $resp = true;
         }
@@ -54,13 +54,13 @@ class FavoritesTDG extends DBAO{
         return $resp;
     }
 
-    public function remove_favorite($userId, $playerId){
+    public function remove_favorite($userId, $playerName){
         try{
             $conn = $this->connect();
             $query = 'call RemoveFavorite(?,?)';
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $userId, PDO::PARAM_INT, 11);
-            $stmt->bindParam(2, $playerId, PDO::PARAM_INT, 11);
+            $stmt->bindParam(2, $playerName, PDO::PARAM_STR, 50);
             $stmt->execute();
             $resp = true;
         }
@@ -72,22 +72,22 @@ class FavoritesTDG extends DBAO{
         return $resp;
     }
 
-    public function toggle_favorite($userId, $playerId){
+    public function already_favorite($userId, $playerName){
         try{
             $conn = $this->connect();
-            $query = 'call ToggleFavorite(?,?)';
+            $query = 'call 	AlreadyFavorite(?,?)';
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $userId, PDO::PARAM_INT, 11);
-            $stmt->bindParam(2, $playerId, PDO::PARAM_INT, 11);
+            $stmt->bindParam(2, $playerName, PDO::PARAM_STR, 50);
             $stmt->execute();
-            $resp = true;
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $stmt->fetch();
         }
         catch(PDOException $e)
         {
-           $resp = false;
+            echo "Error: " . $e->getMessage();
         }
         $conn = null;
-        return $resp;
+        return $result;
     }
-
 }

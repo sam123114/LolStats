@@ -17,23 +17,22 @@ class Favorites
         return $favorites;
     }
 
-    public function addFavorite($userId, $playerId){
+    public function addFavorite($userId, $playerName){
         $TDG = FavoritesTDG::getInstance();
-        $res = $TDG->add_favorite($userId, $playerId);
+        $res = $TDG->add_favorite($userId, $playerName);
         $TDG = null;
         return $res;
     }
 
-    public function removeFavorite($userId, $playerId){
+    public function removeFavorite($userId, $playerName){
         $TDG = FavoritesTDG::getInstance();
-        $res = $TDG->remove_favorite($userId, $playerId);
+        $res = $TDG->remove_favorite($userId, $playerName);
         $TDG = null;
         return $res;
     }
-
-    public function toggleFavorite($userId, $playerId){
+    public function alreadyFavorite($userId, $playerName){
         $TDG = FavoritesTDG::getInstance();
-        $res = $TDG->toggle_favorite($userId, $playerId);
+        $res = $TDG->already_favorite($userId, $playerName);
         $TDG = null;
         return $res;
     }

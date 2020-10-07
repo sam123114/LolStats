@@ -29,7 +29,7 @@
     ?>
   </ul>
   <div class="dropdown dropleft show droplinks">
-    <button class="btn"data-toggle="dropdown" >
+    <button id="dropDown" class="btn"data-toggle="dropdown" >
       <img id="hamburgerImg" src="IMG/hamburger.jpg" height="100"/>
     </button>
     <div class="dropdown-menu">

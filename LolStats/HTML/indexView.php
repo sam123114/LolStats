@@ -6,6 +6,6 @@
         <div id="big">League of Legends</div>
     </div>
 </div>
-<form action="LOGIC/searchResult.logic.php" method="get">
-    <input class="form-control" id="searchBar" name="searchBar" autocomplete="off"  placeholder="Rechercher un joueur"/>
+<form action="summoner.php" method="get">
+    <input class="form-control" id="searchBar" name="summonerName" autocomplete="off"  placeholder="Rechercher un joueur"/>
 </form>

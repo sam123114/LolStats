@@ -1,7 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 let name = urlParams.get('summonerName');
-const apiKey = 'RGAPI-baa71023-2994-4562-aa40-1ed689620a0d';
-
+const apiKey = 'RGAPI-4e2ddf57-8d0e-41db-b8c0-94e1811cf4f1';
 $(document).ready(() => {
     fetch(`https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}?api_key=${apiKey}`).then((resp1) => {
         resp1.json().then((res) => {
@@ -12,8 +11,15 @@ $(document).ready(() => {
             })  
         })
     })
-    
+    $('#togFavorite').click(function(){
+        //POUR L'INSTANT J'AI HARDCODÉ POUR TESTER MAIS IL FAIT REMPLACER LE CHIFFRE PAR LE SUMMONERID
+        $('#togFavorite').load("LOGIC/favorite.logic.php", {'PlayerId': '123'}, function(response, status, xhr){
+            alert(status);
+        });
+    })
 })
+
+
 const displayData = (profileInfo,rankedInfo) => {
     console.log(rankedInfo);
     $('#profileImg')[0].src = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/profileicon/${profileInfo.profileIconId}.png`;

@@ -14,5 +14,5 @@
             <p id="ratio">Win Ratio</p>
         </div>
     </div>
-
+    <button type="submit" id="togFavorite">TEST</button>
 </div>

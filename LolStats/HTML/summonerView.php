@@ -15,26 +15,30 @@
     <div id="profileInfo">
         <div id="profileIcon">
             <img id="profileImg" src="#" height="100"/>
-            <h2 id="level"></h2> 
+            <h2 id="level" title="Niveau"/></h2> 
         </div>
         <h1 id="name"></h1>
-        <button id="togFavorite" class="btn btn-primary"><?php echo $favoriteText ?></button>
+        <a id="togFavorite" ><?php echo $favoriteText ?></a>
         <input type="hidden" id="favoriteAction" value="<?php echo $action ?>"/> 
     </div>
-    <div class="rankDiv">
-        <img id="soloImg"height="100"/>
-        <div class="rankedText">
-            <p>Classé solo</p>
-            <p id="rankSolo" class="rank"></p>
-            <p id="ratioSolo"></p>
+    <hr style="width: 100%; background-color: #FFF;">
+    <div id="rankInfo">
+        <div class="rankDiv">
+            <img id="soloImg"height="100"/>
+            <div class="rankedText">
+                <p>Classé solo</p>
+                <p id="rankSolo" class="rank"></p>
+                <p id="ratioSolo"></p>
+            </div>
+        </div>
+        <div class="rankDiv">
+            <img id="flexImg"height="100"/>
+            <div class="rankedText">
+                <p>Flex 5:5 Rank</p>
+                <p id="rankFlex" class="rank"></p>
+                <p id="ratioFlex"></p>
+            </div>
         </div>
     </div>
-    <div class="rankDiv">
-        <img id="flexImg"height="100"/>
-        <div class="rankedText">
-            <p>Flex 5:5 Rank</p>
-            <p id="rankFlex" class="rank"></p>
-            <p id="ratioFlex"></p>
-        </div>
-    </div>
+    
 </div>

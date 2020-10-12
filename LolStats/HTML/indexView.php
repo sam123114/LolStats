@@ -1,6 +1,9 @@
 <div id="rectangle"></div>
 <div id="title">
-    
+    <div id="logoIndex">
+        <p>Lol</p>
+        <p>Stats</p>
+    </div>
     <div id="text">
         <div id="small">La meilleur application pour les stats de </div>
         <div id="big">League of Legends</div>

@@ -5,6 +5,10 @@
   }
 ?>
 <div id="navbar">
+  <div id="logo">
+    <p>Lol</p>
+    <p>Stats</p>
+  </div>
   <ul>
     <a class='link' href='./'>Accueil</a>
     <a class='link' href='#'>Champions</a>
@@ -12,7 +16,7 @@
     <?php
       if(isset($_SESSION['userId'])){
         echo "<div class='dropleft show'>
-        <button class='btn btn-primary'data-toggle='dropdown'>".
+        <button id='dropdownToggle'data-toggle='dropdown'>".
           $_SESSION['userName']."
         </button>
         <div class='dropdown-menu'>

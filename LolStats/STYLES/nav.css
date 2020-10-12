@@ -1,12 +1,31 @@
+#navbar{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#logo {
+    position: absolute;
+    top: 5px;
+    left: 35px;
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+}
+#logo p+p{
+    color: #00C5E8
+}
 ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     position: absolute;
-    top: 2%;
+    top: 15px;
     right: 50px;
     width: 50%;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 ul a {
     text-decoration: none !important;
@@ -14,9 +33,9 @@ ul a {
     padding: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    transition: ease .1s;
+
 }
-ul :hover{
+ul a:hover{
     color: #FFF !important;
     border-bottom: 1px solid #FFF;
 }
@@ -30,6 +49,23 @@ ul :hover{
     position: absolute;
     left: 0;
 }
+#dropdownToggle {
+    cursor: pointer;
+    padding: 5px 18px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #00C5E8;
+    background-color: #1D2123;
+    border: 1px solid #00C5E8;
+    margin-top: 1%;
+    outline: none;
+}
+#dropdownToggle:hover{
+    color: #fff;
+    background-color: #00C5E8;
+    border-color: rgba(0,0,0,0);
+}
+#dropdownToggle:h
 .dropdown-menu {
     width: 20em;
     transition: ease 0.5s;
@@ -43,7 +79,7 @@ ul :hover{
     top: 0;
 }
 @media screen and (max-width: 1100px) {
-    ul {
+    ul, #logo {
         display: none;
     }
     .droplinks{
@@ -67,7 +103,7 @@ ul :hover{
     margin: 15% auto;
     padding: 2em;
     border: 1px solid #888;
-    width: 50% !important; 
+    width: calc(50vw + 100px) !important; 
 }
 .modal-content .btn {
     width: 50%;

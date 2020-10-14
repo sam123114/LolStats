@@ -1,6 +1,7 @@
 #cont {
     background-color: #212121;
-    height: 1000px
+    background-size: cover;
+    height: 100%;
 }
 #navbar {
     background-color: #121212;

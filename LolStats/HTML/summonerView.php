@@ -1,25 +1,33 @@
 <?php 
     include_once "CLASSES/FAVORITES/favorites.php";
 
-    $favorites = new Favorites();
-    if($favorites->alreadyFavorite($_SESSION['userId'], $_GET['summonerName']) == null){
-        $favoriteText = 'Ajouter à mes favoris';
-        $action = 'add';
+    function showFavoriteButton(){
+        if(isset($_SESSION['userId'])){
+            $favorites = new Favorites();
+            if($favorites->alreadyFavorite($_SESSION['userId'], $_GET['summonerName']) == null){
+                $favoriteText = 'Ajouter à mes favoris';
+                $action = 'add';
+            }
+            else{
+                $favoriteText = 'Retirer de mes favoris';
+                $action = 'remove';
+            }
+            echo "
+            <a id='togFavorite' >".$favoriteText."</a>
+            <input type='hidden' id='favoriteAction' value='".$action."'/>
+            ";
+        }
     }
-    else{
-        $favoriteText = 'Retirer de mes favoris';
-        $action = 'remove';
-    }
+
 ?>
 <div id="summonerInfo">
     <div id="profileInfo">
         <div id="profileIcon">
             <img id="profileImg" src="#" height="100"/>
-            <h2 id="level" title="Niveau"/></h2> 
+            <h2 id="level" title="Niveau"></h2> 
         </div>
         <h1 id="name"></h1>
-        <a id="togFavorite" ><?php echo $favoriteText ?></a>
-        <input type="hidden" id="favoriteAction" value="<?php echo $action ?>"/> 
+        <?php showFavoriteButton() ?>
     </div>
     <hr style="width: 100%; background-color: #FFF;">
     <div id="rankInfo">

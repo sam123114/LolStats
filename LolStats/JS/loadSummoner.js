@@ -1,9 +1,12 @@
 const urlParams = new URLSearchParams(window.location.search);
 let name = urlParams.get('summonerName');
-const apiKey = 'RGAPI-15f62980-7c39-46ed-a9fb-8ec9ba84b267';
+const apiKey = 'RGAPI-d184f543-bac8-4dcc-976e-ae2dba786779';
 $(document).ready(() => {
     fetch(`https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}?api_key=${apiKey}`).then((resp1) => {
         resp1.json().then((res) => {
+            if(res.status != undefined && res.status.status_code == 404){
+                window.location.href="summoner-not-found.php";
+            }
             fetch(`https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${res.id}?api_key=${apiKey}`).then((resp2) => {
                 resp2.json().then((res2) => {
                     displayData(res,res2);
@@ -24,7 +27,7 @@ $(document).ready(() => {
     })
 })
 const displayData = (profileInfo,rankedInfo) => {
-    console.log(profileInfo);
+    //console.log(profileInfo);
     $('#profileImg')[0].src = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/profileicon/${profileInfo.profileIconId}.png`;
     $('#name')[0].textContent += profileInfo.name;
     $('#level')[0].textContent += profileInfo.summonerLevel;

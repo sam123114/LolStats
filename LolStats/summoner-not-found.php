@@ -1,14 +1,13 @@
 <?php
     session_start();
 
-    $module = "indexView.php";
+    $module = "summonerNotFoundView.php";
     $content = array();
     array_push($content, $module);
 
-    $title = "Index - LolStats";
+    $title = "Summoner not found - LolStats";
     $styles = array();
-
-    array_push($styles,'index.css');
+    array_push($styles,'summonerNotFound.css');
 
     require_once __DIR__ . "/HTML/masterpage.php";
 ?>

@@ -89,7 +89,7 @@ ul a:hover{
 .modal-ins, .modal-con {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 2; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -103,7 +103,7 @@ ul a:hover{
     margin: 15% auto;
     padding: 2em;
     border: 1px solid #888;
-    width: calc(50vw + 100px) !important; 
+    width: calc(50vw + 100px) !important;
 }
 .modal-content .btn {
     width: 50%;

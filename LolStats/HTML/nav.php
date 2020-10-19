@@ -12,7 +12,7 @@
   <ul>
     <a class='link' href='./'>Accueil</a>
     <a class='link' href='#'>Champions</a>
-    <a class='link' href='#'>Meilleurs joueurs</a>
+    <a class='link' href='best-player.php'>Meilleurs joueurs</a>
     <?php
       if(isset($_SESSION['userId'])){
         echo "<div class='dropleft show'>
@@ -40,7 +40,7 @@
 
       <a class="dropdown-item" href="#">Accueil</a>
       <a class="dropdown-item" href="#">Champions</a>
-      <a class="dropdown-item" href="#">Meilleurs joueurs</a>
+      <a class="dropdown-item" href="best-player.php">Meilleurs joueurs</a>
       <div class="dropdown-divider"></div>
       <?php
         if(isset($_SESSION['userId'])){

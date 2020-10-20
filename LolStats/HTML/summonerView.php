@@ -4,7 +4,7 @@
     function showFavoriteButton(){
         if(isset($_SESSION['userId'])){
             $favorites = new Favorites();
-            if($favorites->alreadyFavorite($_SESSION['userId'], $_GET['summonerName']) == null){
+            if($favorites->alreadyFavorite($_SESSION['userId'], str_replace(' ', '',$_GET['summonerName'])) == null){
                 $favoriteText = 'Ajouter à mes favoris';
                 $action = 'add';
             }

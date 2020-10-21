@@ -4,7 +4,7 @@
     function showFavoriteButton(){
         if(isset($_SESSION['userId'])){
             $favorites = new Favorites();
-            if($favorites->alreadyFavorite($_SESSION['userId'], str_replace(' ', '',$_GET['summonerName'])) == null){
+            if($favorites->alreadyFavorite($_SESSION['userId'], $_GET['summonerName']) == null){
                 $favoriteText = 'Ajouter à mes favoris';
                 $action = 'add';
             }
@@ -20,6 +20,7 @@
     }
 
 ?>
+<div id="wrapper"></div>
 <div id="summonerInfo">
     <div id="profileInfo">
         <div id="profileIcon">
@@ -29,24 +30,28 @@
         <h1 id="name"></h1>
         <?php showFavoriteButton() ?>
     </div>
-    <hr style="width: 100%; background-color: #FFF;">
-    <div id="rankInfo">
-        <div class="rankDiv">
-            <img id="soloImg"height="100"/>
-            <div class="rankedText">
-                <p>Classé solo</p>
-                <p id="rankSolo" class="rank"></p>
-                <p id="ratioSolo"></p>
+    <hr style="width: calc(100px + 40vw); background-color: #FFF;">
+    <div id="matchInfo">
+        <div id="rankInfo">
+            <div class="rankDiv">
+                <img id="soloImg"height="100"/>
+                <div class="rankedText">
+                    <p>Classé solo</p>
+                    <p id="rankSolo" class="rank"></p>
+                    <p id="ratioSolo"></p>
+                </div>
+            </div>
+            <div class="rankDiv">
+                <img id="flexImg"height="100"/>
+                <div class="rankedText">
+                    <p>Flex 5:5 Rank</p>
+                    <p id="rankFlex" class="rank"></p>
+                    <p id="ratioFlex"></p>
+                </div>
             </div>
         </div>
-        <div class="rankDiv">
-            <img id="flexImg"height="100"/>
-            <div class="rankedText">
-                <p>Flex 5:5 Rank</p>
-                <p id="rankFlex" class="rank"></p>
-                <p id="ratioFlex"></p>
-            </div>
+        <div id="matchList">
         </div>
-    </div>
-    
+        <button id="moreMatchs">Afficher plus de matchs</button>
+    </div>  
 </div>

@@ -6,9 +6,8 @@
     array_push($content, $module);
 
     $title = "Index - LolStats";
-    $styles = array();
-
-    array_push($styles,'index.css');
+    $styles = array('index.css');
+    $scripts = array();
 
     require_once __DIR__ . "/HTML/masterpage.php";
 ?>

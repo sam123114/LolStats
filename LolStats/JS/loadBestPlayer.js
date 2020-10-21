@@ -3,7 +3,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 let pageNumber = urlParams.get('page');
-const apiKey = 'RGAPI-a5339e7d-bb49-4e68-826c-eb9b1031b53e';
+const apiKey = 'RGAPI-ab4b87ba-e25a-44dd-a504-5bb09bafdcc2';
 //const maxSummonerPerPage = 25;
 let data;
 $(document).ready(() => {
@@ -36,7 +36,7 @@ const displayData = (res) => {
         let $tr = $(`<tr class="ranking-table-row">`).append(
             $(`<td class="ranking-table-cell ranking-table-cell-rank">`).text(i + 1),
             $(`<td class="ranking-table-cell ranking-table-cell-summoner">`).html(
-                    $(`<a href="#">`).html(
+                    $(`<a href="summoner.php?summonerName=${entry.summonerName}">`).html(
                         $(`<span>${entry.summonerName}</span>`)
                     )
                 ),

@@ -20,7 +20,7 @@
           $_SESSION['userName']."
         </button>
         <div class='dropdown-menu'>
-          <a class='dropdown-item' href='#'>Mes Favoris</a>
+          <a class='dropdown-item' href='favorites.php'>Mes Favoris</a>
           <a class='dropdown-item' href='#'>Modifier mon profil</a>
           <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>
         </div>
@@ -44,7 +44,7 @@
       <div class="dropdown-divider"></div>
       <?php
         if(isset($_SESSION['userId'])){
-          echo "<a class='dropdown-item' href='#'>Mes Favoris</a>
+          echo "<a class='dropdown-item' href='favorites.php'>Mes Favoris</a>
           <a class='dropdown-item' href='#'>Modifier mon profil</a>
           <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>";
         }

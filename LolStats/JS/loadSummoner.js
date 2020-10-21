@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 let name = urlParams.get('summonerName');
-const apiKey = 'RGAPI-a5339e7d-bb49-4e68-826c-eb9b1031b53e';
+const apiKey = 'RGAPI-ab4b87ba-e25a-44dd-a504-5bb09bafdcc2';
 $(document).ready(() => {
     fetch(`https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}?api_key=${apiKey}`).then((resp1) => {
         resp1.json().then((res) => {

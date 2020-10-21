@@ -26,7 +26,7 @@ class FavoritesTDG extends DBAO{
             $stmt->bindParam(1, $userId, PDO::PARAM_INT, 11);
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            $result = $stmt->fetch();
+            $result = $stmt->fetchAll();
         }
         catch(PDOException $e)
         {

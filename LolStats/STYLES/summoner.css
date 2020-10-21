@@ -1,7 +1,14 @@
 #cont {
+    padding-bottom: 10em;
+}
+#wrapper {
     background-color: #212121;
-    background-size: cover;
-    height: 100%;
+    position: fixed;;
+    top:0;
+    left:0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
 }
 #navbar {
     background-color: #121212;
@@ -26,7 +33,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    width: calc(350px + 1vw);
+    width: calc(250px + 10vw);
     height: auto;
     position: relative;
     top: 0;
@@ -65,11 +72,9 @@
 #rankInfo{
     border: 1px solid rgba(255, 255, 255, .1);
     padding: 5px;
-    position: absolute;
-    top: 40%;
     display: flex;
-    height: 40%;
-    flex-direction: column;
+    height: 150px;
+    flex-direction: row;
     justify-content: space-between;
 }
 .rankDiv {
@@ -78,13 +83,137 @@
     padding: 15px;
     width: calc(250px + 5vw);
     display: flex;
+    justify-content: flex-start;
     position: relative;
 }
 .rankedText{
     position: absolute;
-    right: 50px;
+    left: 150px;
 }
 .rank {
     font-size: 20px;
     font-weight: bold;
+}
+#matchInfo{
+    position: absolute;
+    width: calc(250px + 60vw);
+    height: 500px;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.matchList{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    padding: 1em;
+}
+.matchSummary{
+    height: 200px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightskyblue;
+    margin-top: 1em;
+}
+.matchSummary > div {
+    width: 10%;
+}
+.gameStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2F2F2F;
+}
+.gameSettingInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.championImage{
+    border-radius: 2em;
+}
+.KDAStats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.KDA{
+    display: flex;
+}
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.itemList{
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    flex: 1;
+}
+.items img {
+    border-radius: .25em;
+    height: 22px;
+}
+.players {
+    width: 30% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1em;
+    margin-right: 1em;
+}
+.summoner{
+    display: flex;
+    justify-content: flex-start;
+}
+.summoner img {
+    height: 25px;
+}
+.lose {
+    background-color: lightcoral;
+}
+.win {
+    background-color: lightskyblue;
+}
+.noItem {
+    width: 22px;
+    height: 22px;
+    background-color: lightgrey;
+    display: inline-block;
+}
+#moreMatchs{
+    margin-top: 1em;
+    width: 75%;
+    align-self: center;
+    border-radius: .75em;
+    padding: 15px 30px;
+    background-color: #2F2F2F;
+    color: #FFF;
+    border: 2px solid #121212;
+    transition: ease-in-out .5s;
+}
+#moreMatchs:hover{
+    border: 2px solid #FFF;
 }

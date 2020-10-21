@@ -1,0 +1,35 @@
+#cont {
+    background-color: #212121;
+    background-size: cover;
+    height: 100%;
+    background-repeat: repeat;
+}
+#navbar {
+    background-color: #121212;
+    height: 75px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+#page-content {
+    width: 970px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#title {
+    color: #FFF;
+    margin-bottom: 30px;
+}
+
+a span {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.favorite-container a {
+    display: block;
+    padding-bottom: 10px;
+}

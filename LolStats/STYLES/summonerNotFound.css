@@ -1,0 +1,23 @@
+#searchBar {
+    width: calc(275px + 10vw);
+}
+#navbar {
+    background-color: #121212;
+    height: 75px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+#cont {
+    background-color: #212121;
+    height: 1000px
+}
+#errorMessage {
+    color: #D9534F;
+}
+.container-center {
+    position: fixed;
+    top: calc(50% + 50px);
+    left: calc(50% - 150px)
+}

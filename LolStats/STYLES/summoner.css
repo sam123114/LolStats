@@ -200,10 +200,10 @@
     transform: rotate(180deg);
 }
 .lose {
-    background-color: #FF6F61
+    background-color: #FF6F61;
 }
 .win {
-    background-color: #98B4D4
+    background-color: #98B4D4;
 }
 .matchExtraInfo{
     display: flex;

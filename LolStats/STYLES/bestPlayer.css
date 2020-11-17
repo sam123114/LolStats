@@ -1,23 +1,22 @@
 #navbar {
     background-color: #121212;
+    position: fixed;
     height: 75px;
     display: flex ;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 auto;
 }
-#wrapper {
+
+#cont {
     background-color: #212121;
-    position: fixed;;
-    top:0;
-    left:0;
-    z-index: -1;
-    width: 100%;
-    height: 100vh;
+    background-size: cover;
+    height: 100%;
+    background-repeat: repeat;
 }
 
 #page-content {
-    width: 970px;
+    width: 70%;
     margin: auto;
     margin-top: 100px;
     overflow: hidden;
@@ -26,6 +25,7 @@
 .scrollable {
     height: 70%;
     overflow: auto;
+    margin-bottom: 30px;
 }
 
 #page-content h3:first-of-type {
@@ -225,4 +225,19 @@ ul {
     text-align: center;
     width: 100%;
     height: 100%;
+}
+.navigation-btn {
+    cursor: pointer;
+    padding: 5px 18px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 1em;
+    color: #005c6d;
+    background-color: #1D2123;
+    border: 1px solid #005c6d;
+    width: fit-content;
+}
+.selected {
+    color: #00C5E8;
+    border: 2px solid #00C5E8;
 }

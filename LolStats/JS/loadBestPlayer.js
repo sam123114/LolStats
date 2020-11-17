@@ -1,20 +1,34 @@
-// Le code commenté peut servir à rendre l'affichage de la table sur plusieurs page, mais n'est pas
-// utilisé à cause de l'utilisation de la srollview
-
 const urlParams = new URLSearchParams(window.location.search);
-let pageNumber = urlParams.get('page');
-//const maxSummonerPerPage = 25;
+let queue = urlParams.get('queue');
 let data;
-$(document).ready(() => {
-    fetch(`https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5?api_key=${apiKey}`).then((resp1) => {
-        resp1.json().then((res) => {
-            //data = res;
-            if(res.entries != undefined){
-                displayData(res);
-            }
-        })
-    })
+$(document).ready(async() => {
+    if(queue == "Solo"){
+        $('#solo-btn').addClass('selected');
+        $('#flex-btn').removeClass('selected');
+        let res = await fetchSoloRanking()
+        displayData(res);
+    } else if(queue == "Flex"){
+        $('#solo-btn').removeClass('selected');
+        $('#flex-btn').addClass('selected');
+        let res = await fetchFlexRanking()
+        displayData(res);
+    } else {
+        $('#solo-btn').addClass('selected');
+        $('#flex-btn').removeClass('selected');
+        let res = await fetchSoloRanking();
+        displayData(res);
+    }
 })
+
+const fetchSoloRanking = async () => {
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`)
+        .then(resp => resp.json());
+}
+
+const fetchFlexRanking = async () => {
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_FLEX_SR`)
+        .then(resp => resp.json());
+}
 
 const displayData = (res) => {
     let tableBody = $('#table-body')[0];
@@ -27,17 +41,14 @@ const displayData = (res) => {
             return 0;
     });
     data = res;
-    /*if(!isPageNumberValid(pageNumber, (data.entries.length / maxSummonerPerPage))){
-        pageNumber = 1;
-    }*/
-    for(let i = 0/*((pageNumber - 1) * maxSummonerPerPage)*/; i != data.entries.length/*(pageNumber * maxSummonerPerPage)*/; i++){
+    for(let i = 0; i != data.entries.length; i++){
         let entry = data.entries[i];
         let $tr = $(`<tr class="ranking-table-row">`).append(
             $(`<td class="ranking-table-cell ranking-table-cell-rank">`).text(i + 1),
             $(`<td class="ranking-table-cell ranking-table-cell-summoner">`).html(
                     $(`<a href="summoner.php?summonerName=${entry.summonerName}">`).html(
                         $(`<span>${entry.summonerName}</span>`)
-                    )
+                    ) 
                 ),
             $(`<td class="ranking-table-cell ranking-table-cell-tier">`).html(
                 $(`<img src="IMG/Emblems/${data.tier}.png" alt="summoner rank icon">`),
@@ -60,10 +71,3 @@ const displayData = (res) => {
         ).appendTo(tableBody);
     }
 }
-
-/*const isPageNumberValid = (pageNumber, maxPageNumber) => {
-    if(pageNumber == undefined || isNaN(pageNumber) || pageNumber <= 0 || pageNumber > maxPageNumber)
-        return false;
-    else
-        return true;
-}*/

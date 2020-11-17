@@ -1,3 +1,6 @@
+#logo:hover{
+    cursor: pointer;
+}
 #wrapper {
     background-color: #212121;
     position: fixed;;
@@ -28,9 +31,6 @@
     width: 400px;
     font-size: 40px;
     font-family: 'Lobster', cursive;
-}
-#logo:hover{
-    cursor: pointer;
 }
 #logo p+p{
     color: #00C5E8

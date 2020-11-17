@@ -143,11 +143,11 @@ const fetchMatchFromAPI = async (match) => {
     return matchInfos;
 }
 const fetchChampionsFromAPI = async () => {
-    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json')
+    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.23.1/data/en_US/champion.json')
         .then(resp => resp.json());
 }
 const fetchSpellsFromAPI = async () => {
-    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/summoner.json')
+    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.23.1/data/en_US/summoner.json')
         .then(resp => resp.json())
 }
 const fetchMapsFromAPI = async () => {
@@ -190,7 +190,7 @@ const getQueueTypeById = (queueId) => {
     return "RGM";
 }
 const displayProfilInfo = (profile) => {
-    $('#profileImg')[0].src = `http://ddragon.leagueoflegends.com/cdn/10.20.1/img/profileicon/${profile.profileIconId}.png`;
+    $('#profileImg')[0].src = `http://ddragon.leagueoflegends.com/cdn/10.23.1/img/profileicon/${profile.profileIconId}.png`;
     $('#name')[0].textContent += profile.name;
     $('#level')[0].textContent += profile.summonerLevel;
 }

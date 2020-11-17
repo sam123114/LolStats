@@ -1,8 +1,5 @@
 <?php
     include_once __DIR__ . "/../UTILS/loader.php";
-    
-    $_SESSION['currentPage'] = basename($_SERVER['PHP_SELF']);
-
 ?>
 <html>
     <head>
@@ -17,15 +14,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
-        <script>const apiKey = 'RGAPI-5e55c3a6-27aa-44a6-ab5d-90518e7ab987';</script>
+        <script>const urlFetcher = 'http://167.114.152.54/~LolStats01/LOGIC/fetchFromAPI.logic.php';</script>
         <?php load_scripts($scripts) ?>
         <title><?php echo $title ?></title>
     </head>
     <body>
-        <div id="wrapper"></div>
+        <div id="cont">
             <?php 
                 include_once "nav.php";      
                 load_modules($content); 
             ?>       
+        </div>
     </body>
 </html>

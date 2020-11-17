@@ -1,8 +1,5 @@
 $(document).ready(() => {
     
-    $('#logo').click(() => {
-        window.location = './';
-    })
 
     let modalIns = $(".modal-ins")[0];
     let modalCon = $(".modal-con")[0];

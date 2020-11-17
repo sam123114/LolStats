@@ -14,6 +14,6 @@
 
    $user = new User();
    $user->login($email, $pw);
-   header("Location: ../". $_SESSION['currentPage']);
+   header("Location: ../");
    die();
    ?>

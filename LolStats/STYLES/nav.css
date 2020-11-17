@@ -11,6 +11,9 @@
     height: 100vh;
 }
 #navbar{
+    position: relative;
+    top: 0;
+    left: 0;
     background-color: #121212;
     height: 75px;
     display: flex ;

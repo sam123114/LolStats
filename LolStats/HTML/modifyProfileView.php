@@ -1,5 +1,3 @@
-<div id="wrapper">
-</div>
 <div id="page-content">
     <div id="form">
         <h3>Modifier mon profil</h3>

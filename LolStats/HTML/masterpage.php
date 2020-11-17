@@ -1,5 +1,6 @@
 <?php
     include_once __DIR__ . "/../UTILS/loader.php";
+    $_SESSION['currentPage'] = basename($_SERVER['PHP_SELF']);
 ?>
 <html>
     <head>
@@ -19,7 +20,7 @@
         <title><?php echo $title ?></title>
     </head>
     <body>
-        <div id="cont">
+        <div id="wrapper">
             <?php 
                 include_once "nav.php";      
                 load_modules($content); 

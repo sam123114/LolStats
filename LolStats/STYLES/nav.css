@@ -1,7 +1,10 @@
 #navbar{
-    position: relative;
-    top: 0;
-    left: 0;
+    background-color: #121212;
+    height: 75px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 #logo {
     position: absolute;

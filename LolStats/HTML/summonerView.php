@@ -20,7 +20,6 @@
     }
 
 ?>
-<div id="wrapper"></div>
 <div id="summonerInfo">
     <div id="profileInfo">
         <div id="profileIcon">

@@ -21,7 +21,6 @@
         }
     }
 ?>
-<div id="wrapper"></div>
 <div id="page-content">
     <h2 id="title">Mes favoris</h2>
     <table class="table table-dark table-striped">

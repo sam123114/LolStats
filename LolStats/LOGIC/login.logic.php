@@ -5,7 +5,7 @@
 
    if(isset($_SESSION["userID"]))
    {
-      header("Location: ../");
+      header("Location: ../". $_SESSION['currentPage']);
       die();
    }
 
@@ -14,6 +14,6 @@
 
    $user = new User();
    $user->login($email, $pw);
-   header("Location: ../");
+   header("Location: ../". $_SESSION['currentPage']);
    die();
    ?>

@@ -1,0 +1,26 @@
+#page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+}
+#form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,.5);
+    padding: 1em;
+    background-color: #121212;
+    color: #FFF;
+}
+#form h3 {
+    align-self: center;
+
+}
+#form input {
+    width: 100%;
+}
+#form button {
+    width: 50%;
+    align-self: center;
+}

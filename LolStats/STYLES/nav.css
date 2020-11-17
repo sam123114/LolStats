@@ -1,7 +1,22 @@
+#wrapper {
+    background-color: #212121;
+    position: fixed;;
+    top:0;
+    left:0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+}
 #navbar{
     position: relative;
     top: 0;
     left: 0;
+    background-color: #121212;
+    height: 75px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 #logo {
     position: absolute;
@@ -13,6 +28,9 @@
     width: 400px;
     font-size: 40px;
     font-family: 'Lobster', cursive;
+}
+#logo:hover{
+    cursor: pointer;
 }
 #logo p+p{
     color: #00C5E8
@@ -78,7 +96,7 @@ ul a:hover{
     position: absolute;
     top: 0;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
     ul, #logo {
         display: none;
     }

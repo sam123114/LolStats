@@ -1,21 +1,8 @@
-#cont {
-    background-color: #212121;
-    background-size: cover;
-    height: 100%;
-}
-#navbar {
-    background-color: #121212;
-    height: 75px;
-    display: flex ;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-}
 #summonerInfo {
     position: absolute;
     top: 200px;
-    left: 15%;
-    height: 700px;
+    left: calc(20px + 5vw);
+    height: auto;
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -26,7 +13,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    width: calc(350px + 1vw);
+    width: calc(250px + 10vw);
     height: auto;
     position: relative;
     top: 0;
@@ -63,28 +50,425 @@
     border-color: rgba(0,0,0,0);
 }
 #rankInfo{
-    border: 1px solid rgba(255, 255, 255, .1);
     padding: 5px;
-    position: absolute;
-    top: 40%;
     display: flex;
-    height: 40%;
-    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    flex-direction: row;
     justify-content: space-between;
+    align-content: space-between;
 }
 .rankDiv {
     background-color: #24262C;
     color: #FFF;
     padding: 15px;
-    width: calc(250px + 5vw);
+    width: calc(250px + 10vw);
     display: flex;
+    justify-content: flex-start;
     position: relative;
+    border: 1px solid rgba(255, 255, 255, .1);
 }
 .rankedText{
     position: absolute;
-    right: 50px;
+    left: 150px;
 }
 .rank {
     font-size: 20px;
     font-weight: bold;
+}
+#matchInfo{
+    position: absolute;
+    padding-bottom: 2em;
+    width: calc(150px + 75vw);
+    top: 300px;
+    left: 0;
+    /*display: flex;*/
+    /*display: none;*/
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.matchList{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: .85rem;
+    padding: 1em;
+}
+.matchSummary{
+    height: 200px;
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightskyblue;
+    margin-top: 1em;
+}
+.matchSummary > div {
+    width: 15%;
+}
+.gameStats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2F2F2F;
+}
+.gameSettingInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.championImage{
+    border-radius: 2em;
+}
+.KDAStats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.KDA{
+    display: flex;
+}
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.itemList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 75%;
+    flex: 1;
+}
+.items img, .playerItems img {
+    border-radius: .25em;
+    height: 22px;
+}
+.players {
+    width: 25% !important;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.team{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 1em;
+    margin-right: 1em;
+}
+.summoner{
+    display: flex;
+    justify-content: flex-start;
+}
+.summoner img {
+    height: 25px;
+}
+.summonerName a {
+    text-decoration: none;
+    color: #2F2F2F;
+}
+.dropDownArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40px !important;
+    border-left: 1px solid rgba(0,0,0,.5);
+    cursor: pointer;
+}
+.arrow {
+    height: 30px;
+}
+.upArrow {
+    transform: rotate(180deg);
+}
+.lose {
+    background-color: #FF6F61
+}
+.win {
+    background-color: #98B4D4
+}
+.matchExtraInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #212121;
+    height: auto;
+}
+td{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+th {
+    width: 5% !important;
+    text-align: center !important;
+
+}
+.playerSpells{
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    width: 25px;
+    height: 55px;
+}
+.playerSpells img {
+    height: 25px;
+}
+.minionKilled{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#moreMatchs{
+    margin-top: 1em;
+    width: 75%;
+    align-self: center;
+    border-radius: .75em;
+    padding: 15px 30px;
+    background-color: #2F2F2F;
+    color: #FFF;
+    border: 2px solid #121212;
+    transition: ease-in-out .5s;
+}
+#moreMatchs:hover{
+    border: 2px solid #FFF;
+}
+
+@media screen and (max-width: 1250px) {
+    .players {
+        display: none;
+    }
+    .matchSummary > div {
+        width: 20%;
+    }
+    #matchInfo{
+        width: 100vw;
+        left: calc(-20px - 5vw);    
+    }
+}
+/*Partie en cours*/
+#liveMatchBtn {
+    cursor: pointer;
+    padding: 5px 18px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 1em;
+    color: #00C5E8;
+    background-color: #1D2123;
+    border: 1px solid #00C5E8;
+    width: fit-content;
+}
+#liveMatch {
+    border: 1px solid #121212;
+    background-color: #24262C;
+    border-radius: 4px;
+    width: 785px;
+    /*display: block;*/
+    /*display: none;*/
+}
+.liveMatchTable {
+    width: 100%;
+    table-layout: fixed;
+}
+.liveMatchTitle {
+    padding: 4px;
+    border-bottom: solid 1px #121212;
+}
+.liveMatchTitle span {
+    color: #FFF;
+}
+.liveMatchHeaderCell {
+    padding: 9px 0 8px 0;
+    border-bottom: solid 1px #121212;
+    border-top: solid 1px #121212;
+    font-size: 12px;
+    background-color: #24262C;
+    color: #FFF;
+    text-align: center;
+    font-weight: normal;
+}
+#liveMatch>.liveMatchContent>.liveMatchTable.team-100>.teamHeader>.teamHeaderRow>.bar {
+    border: 1px solid #1a78ae;
+    background-color: #1f8ecd;
+}
+#liveMatch>.liveMatchContent>.liveMatchTable.team-100>.teamHeader>.teamHeaderRow>.teamName {
+    color: #1f8ecd;
+}
+#liveMatch>.liveMatchContent>.liveMatchTable.team-200>.teamHeader>.teamHeaderRow>.bar {
+    border:1px solid #c6443e;
+    background-color:#ee5a52;
+}
+#liveMatch>.liveMatchContent>.liveMatchTable.team-200>.teamHeader>.teamHeaderRow>.teamName {
+    color: #ee5a52;
+}
+.liveMatchBodyCell {
+    padding-top: 3px;
+}
+.championImg {
+    text-align: right;
+}
+.teamName {
+    padding-left: 15px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+.Img {
+    display: inline-block;
+    margin-right: 2px;
+    border: 1px solid #000;
+    vertical-align: middle;
+    font-size: 0;
+    height: 26px;
+    width: 26px;
+}
+colgroup {
+    display: table-column-group;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.teamRow {
+    height: 37px;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+col {
+    display: table-column;
+}
+.liveSpell {
+    width: 12px;
+    height: 12px;
+}
+.liveRuneIcon {
+    width: 12px;
+    height: 12px;
+}
+.liveSummonerName {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 12px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.liveTier {
+    font-size: 12px;
+    color: #FFF;
+}
+.win-rate-progress-bar {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.win-rate-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.win-rate-progress-left {
+    background: #3d95e5;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 1;
+}
+
+.win-rate-progress-right {
+    background: #ee5a52;
+    width: 100%;
+}
+
+.win-rate-progress-text {
+    position: absolute;
+    top: 3px;
+    height: 100%;
+    line-height: 15px;
+    font-size: 12px;
+    color: #FFF;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.win-rate-progress-text-left {
+    left: 9px;
+    text-align: left;
+    z-index: 1;
+}
+
+.win-rate-progress-text-right {
+    right: 8px;
+    text-align: right;
+}
+.winrate-text {
+    color: #FFF;
+    font-size: 12px;
+}
+.liveRune {
+    padding: 0px 3px 0px 0px;
+}
+.liveRuneButton {
+    border: 1px solid #121212;
+    width: 100%;
+    padding: 8px 0;
+    line-height: 14px;
+    font-size: 12px;
+    color: #FFF;
+    background-color: #1f2023;
+}
+.liveError {
+    padding: 4px;
+    border-bottom: solid 1px #121212;
+}
+
+.liveError span {
+    color: #D9534F;
+}
+
+.liveMasteriesPoint span {
+    font-size: 12px;
+    color: #FFF;
 }

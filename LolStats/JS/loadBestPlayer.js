@@ -3,7 +3,6 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 let pageNumber = urlParams.get('page');
-const apiKey = 'RGAPI-ab4b87ba-e25a-44dd-a504-5bb09bafdcc2';
 //const maxSummonerPerPage = 25;
 let data;
 $(document).ready(() => {

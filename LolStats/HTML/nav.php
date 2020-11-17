@@ -11,7 +11,7 @@
   </div>
   <ul>
     <a class='link' href='./'>Accueil</a>
-    <a class='link' href='#'>Champions</a>
+    <a class='link' href='freeChampions.php'>Champions</a>
     <a class='link' href='best-player.php'>Meilleurs joueurs</a>
     <?php
       if(isset($_SESSION['userId'])){
@@ -21,7 +21,7 @@
         </button>
         <div class='dropdown-menu'>
           <a class='dropdown-item' href='favorites.php'>Mes Favoris</a>
-          <a class='dropdown-item' href='#'>Modifier mon profil</a>
+          <a class='dropdown-item' href='modify-profile.php'>Modifier mon profil</a>
           <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>
         </div>
       </div>";
@@ -38,14 +38,14 @@
     </button>
     <div class="dropdown-menu">
 
-      <a class="dropdown-item" href="#">Accueil</a>
-      <a class="dropdown-item" href="#">Champions</a>
+      <a class="dropdown-item" href="./">Accueil</a>
+      <a class="dropdown-item" href="freeChampions.php">Champions</a>
       <a class="dropdown-item" href="best-player.php">Meilleurs joueurs</a>
       <div class="dropdown-divider"></div>
       <?php
         if(isset($_SESSION['userId'])){
           echo "<a class='dropdown-item' href='favorites.php'>Mes Favoris</a>
-          <a class='dropdown-item' href='#'>Modifier mon profil</a>
+          <a class='dropdown-item' href='modify-profile.php'>Modifier mon profil</a>
           <a class='dropdown-item' href='LOGIC/logout.logic.php'>Se déconnecter</a>";
         }
         else{ 

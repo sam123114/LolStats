@@ -12,4 +12,11 @@ function load_styles($styleList){
     }
     echo "<link rel='stylesheet' href='STYLES/nav.css'>";
 }
+function load_scripts($scriptList){
+    foreach($scriptList as $script){
+        echo "<script src='JS/$script'></script>";
+    }
+    echo "<script src='JS/nav.js'></script>
+        <script src='JS/form.js'></script>";
+}
 ?>

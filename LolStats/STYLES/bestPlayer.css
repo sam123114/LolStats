@@ -6,12 +6,14 @@
     justify-content: space-between;
     margin: 0 auto;
 }
-
-#cont {
+#wrapper {
     background-color: #212121;
-    background-size: cover;
-    height: 100%;
-    background-repeat: repeat;
+    position: fixed;;
+    top:0;
+    left:0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
 }
 
 #page-content {

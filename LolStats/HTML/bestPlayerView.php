@@ -1,6 +1,5 @@
 <div id="page-content">
     <h3 id="title">Classement des meilleurs joueurs</h3>
-
     <div class="scrollable">
         <table class="ranking-table">
             <colgroup>

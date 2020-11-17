@@ -4,7 +4,7 @@
     session_start();
 
    $userId = $_SESSION['userId'];
-   $playerName = str_replace(' ', '',$_POST['playerName']);
+   $playerName = $_POST['playerName'];
    $action = $_POST['action'];
    $favorites = new Favorites();
    

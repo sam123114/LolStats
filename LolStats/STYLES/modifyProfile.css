@@ -1,26 +1,8 @@
-#wrapper {
-    background-color: #212121;
-    position: fixed;;
-    padding-bottom: 10em;
-    top:0;
-    left:0;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-}
 #page-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75%;
-}
-#navbar {
-    background-color: #121212;
-    height: 75px;
-    display: flex ;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
 }
 #form {
     width: 50%;

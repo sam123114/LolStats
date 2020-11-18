@@ -68,30 +68,30 @@ const parseTime = (secs) => {
         .filter((v,i) => v !== "00" || i > 0)
         .join(":")
 }
-
+//fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`)
 //Fetch Functions
 const fetchCurrentGameInfoFromAPI = async (profile) => {
-    return await fetch(`https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${profile.id}?api_key=${apiKey}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${profile.id}`)
         .then(resp => resp.json());
 }
 const fetchMasteriesPointFromAPI = async (summonerId, championId) => {
-    return await fetch(`https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}/by-champion/${championId}?api_key=${apiKey}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}/by-champion/${championId}`)
         .then(resp => resp.json());
 }
 const fetchProfileInfoFromAPI = async () => {
-    return await fetch(`https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}?api_key=${apiKey}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}`)
         .then(resp => resp.json());
 }
 const fetchRankInfoFromAPI = async (summonerId) => {
-    return await fetch(`https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}?api_key=${apiKey}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerId}`)
         .then(resp => resp.json());
 }
 const fetchMatchListFromAPI = async (profile) => {
-    return await fetch(`https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${profile.accountId}?api_key=${apiKey}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${profile.accountId}`)
         .then(resp => resp.json());
 }
 const fetchMatchFromAPI = async (match) => {
-    let matchInfo = await fetch(`https://na1.api.riotgames.com/lol/match/v4/matches/${match.gameId}?api_key=${apiKey}`)
+    let matchInfo = await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/match/v4/matches/${match.gameId}`)
         .then(resp => resp.json());
     allMatchesInfos.push(matchInfo);
     let gameDuration = Math.round(matchInfo.gameDuration/60);

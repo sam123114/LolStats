@@ -35,7 +35,7 @@
 #logo p+p{
     color: #00C5E8
 }
-ul {
+#navbar ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -45,7 +45,7 @@ ul {
     width: 50%;
     justify-content: space-between;
 }
-ul a {
+#navbar ul a {
     text-decoration: none !important;
     color: #FFF;
     padding: 1%;
@@ -53,7 +53,7 @@ ul a {
     padding-right: 2%;
 
 }
-ul a:hover{
+#navbar ul a:hover{
     color: #FFF !important;
     border-bottom: 1px solid #FFF;
 }
@@ -97,7 +97,7 @@ ul a:hover{
     top: 0;
 }
 @media screen and (max-width: 1200px) {
-    ul, #logo {
+    #navbar ul, #logo {
         display: none;
     }
     .droplinks{

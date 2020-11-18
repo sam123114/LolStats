@@ -21,10 +21,10 @@
     </head>
     <body>
         <div id="wrapper">
+        </div>
             <?php 
                 include_once "nav.php";      
                 load_modules($content); 
             ?>       
-        </div>
     </body>
 </html>

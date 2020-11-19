@@ -14,7 +14,7 @@ const fetchFreeChampionsFromAPI = async () => {
         .then(resp => resp.json());
 }
 const fetchChampionsFromAPI = async () => {
-    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json')
+    return await fetch('http://ddragon.leagueoflegends.com/cdn/10.23.1/data/en_US/champion.json')
         .then(resp => resp.json());
 }
 const getChampionInfosFromId = (championId) =>{

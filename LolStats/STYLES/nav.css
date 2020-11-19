@@ -35,7 +35,7 @@
 #logo p+p{
     color: #00C5E8
 }
-#navbar ul {
+.link-list {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -45,15 +45,14 @@
     width: 50%;
     justify-content: space-between;
 }
-#navbar ul a {
+.link-list .link {
     text-decoration: none !important;
     color: #FFF;
     padding: 1%;
     padding-left: 2%;
     padding-right: 2%;
-
 }
-#navbar ul a:hover{
+.link-list .link:hover{
     color: #FFF !important;
     border-bottom: 1px solid #FFF;
 }
@@ -97,7 +96,7 @@
     top: 0;
 }
 @media screen and (max-width: 1200px) {
-    #navbar ul, #logo {
+    .link-list, #logo {
         display: none;
     }
     .droplinks{
@@ -114,7 +113,7 @@
     height: 100%;
     overflow: auto; 
     background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
     background-color: #fefefe;
@@ -132,6 +131,7 @@
     float: right;
     font-size: 30px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close-ins:hover, .close-con:hover{

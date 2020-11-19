@@ -68,7 +68,7 @@ const parseTime = (secs) => {
         .filter((v,i) => v !== "00" || i > 0)
         .join(":")
 }
-//fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`)
+
 //Fetch Functions
 const fetchCurrentGameInfoFromAPI = async (profile) => {
     return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${profile.id}`)
@@ -79,7 +79,7 @@ const fetchMasteriesPointFromAPI = async (summonerId, championId) => {
         .then(resp => resp.json());
 }
 const fetchProfileInfoFromAPI = async () => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/tft/summoner/v1/summoners/by-name/${name}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${name}`)
         .then(resp => resp.json());
 }
 const fetchRankInfoFromAPI = async (summonerId) => {

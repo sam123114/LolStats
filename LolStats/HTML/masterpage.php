@@ -22,9 +22,9 @@
     <body>
         <div id="wrapper">
         </div>
-            <?php 
-                include_once "nav.php";      
-                load_modules($content); 
-            ?>       
+        <?php 
+            include_once "nav.php";      
+            load_modules($content); 
+        ?>       
     </body>
 </html>

@@ -97,7 +97,7 @@ const displayRankingPodium = async () => {
                     $(`<img src="//opgg-static.akamaized.net/images/profile_icons/profileIcon${profile.profileIconId}.jpg?image=c_scale,q_auto&v=1518361200" alt="icon" class="ranking-podium-item-icon-image">`)
                 )
             ),*/
-            $(`<a href="#" class="ranking-podium-item-summonerName">`).text(data.entries[i].summonerName),
+            $(`<a href="summoner.php?summonerName=${data.entries[i].summonerName}" class="ranking-podium-item-summonerName">`).text(data.entries[i].summonerName),
             /*$(`<div class="ranking-podium-item-level">`).text(`Lv.${profile.summonerLevel}`),*/
             $(`<div class="ranking-podium-item-tier">`).append(
                 $(`<img src="IMG/Emblems/${data.tier}.png" alt="summoner rank icon">`),

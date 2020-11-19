@@ -302,6 +302,9 @@ ul {
     text-align: center;
     color: #bd5151;
 }
+.ranking-podium-item-summonerName:hover {
+    color: #bd5151;
+}
 .ranking-podium-item-level {
     line-height: 25px;
     font-family: Helvetica,AppleSDGothic,"Apple SD Gothic Neo",AppleGothic,Arial,Tahoma;

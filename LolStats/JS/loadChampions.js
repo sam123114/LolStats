@@ -31,7 +31,7 @@ const displayFreeChampions = (freeChampions) => {
                         <img src="http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/${champion.id}.png" class="img">
                         
                         <h5>${champion.id}</h5>
-                        <a href='champion?name=${champion.id}' class='details'>Détails</a>
+                        <a href='champion.php?name=${champion.id}' class='details'>Détails</a>
                     </div>`;
     display += '</div>';    
 

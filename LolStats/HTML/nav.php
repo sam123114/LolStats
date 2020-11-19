@@ -27,8 +27,8 @@
       </div>";
       }
       else{
-        echo "<a class='ins'href='#'>S'inscrire</a>
-              <a class='con bg-primary' href='#'>Se connnecter</a>";
+        echo "<a class='ins link'href='#'>S'inscrire</a>
+              <a class='con bg-primary link' href='#'>Se connnecter</a>";
       }
     ?>
   </ul>

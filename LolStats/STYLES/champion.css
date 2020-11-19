@@ -3,8 +3,6 @@
     flex-direction: column;
     margin-top: 10em;
     margin-left: calc(2em + 5vw);
-    margin-bottom: 3em;
-    overflow-x: hidden;
 }
 #championHeader {
     margin-bottom: 2em;
@@ -30,13 +28,11 @@
 }
 #spells {
     display: flex;
-    flex-wrap: wrap;
-    width: 45%;
-    justify-content: flex-start;
+    width: 400px;
+    justify-content: space-between;
 }
 .spell {
     position: relative;
-    margin: 0 1em 1em 0;
 }
 .spell img {
     height: 50px;
@@ -54,52 +50,11 @@
     width: 20px;
 }
 .desc {
-    clip-path: polygon(9% 7%, 100% 7%, 100% 8%, 100% 100%, 0 100%, 0 0, 0 0);
-    display: none;
+    display: block;
     position: absolute;
-    top: 50;
+    top: 100;
     background-color: #000;
-    padding: 4em 2em 2em 2em;
-    text-align: justify;
-    width: 300px;
-    font-size: 12px;
-    z-index: 2;
+    padding: 1em;
+    text-align: center;
+    width: 200px;
 }
-#tipsTitle {
-    color: #FFF;
-    margin: 1em 0 2em 0;
-}
-#tips {
-    color: #FFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 85%;
-}
-#tips > div {
-    width: 40%;
-    background-color: #24262C;
-    border-radius: 1em;
-    padding: 2em;
-    border: 1px solid rgba(255, 255, 255, .1);
-    margin-bottom: 2em;
-
-}
-#ally {
-    border-color: #98B4D4 !important;
-}
-#enemy {
-    border-color: #FF6F61 !important;
-}
-#tips h4 {
-    margin-bottom: 1em;
-}
-#tips li {
-    color: #FFF;
-}
-@media screen and (max-width: 1100px) {
-    #tips {
-        flex-direction: column;
-        width: 200%;
-    }
-  }

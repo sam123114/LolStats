@@ -19,7 +19,6 @@
     width: 70%;
     margin: auto;
     margin-top: 100px;
-    overflow: hidden;
 }
 
 .scrollable {
@@ -240,4 +239,119 @@ ul {
 .selected {
     color: #00C5E8;
     border: 2px solid #00C5E8;
+}
+.ranking-podium-list {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.ranking-podium-item {
+    position: relative;
+    display: inline-block;
+    padding: 14px 18px;
+    border: 2px solid #121212;
+    background: #24262C;
+    box-sizing: border-box;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.ranking-podium-item-rank {
+    width: 30px;
+    background: #121212;
+    padding: 3px 0;
+    line-height: 24px;
+    font-family: Helvetica,AppleSDGothic,"Apple SD Gothic Neo",AppleGothic,Arial,Tahoma;
+    font-size: 21px;
+    text-align: center;
+    color: #fff;
+}
+.ranking-podium-item-top {
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+.ranking-podium-item-bot {
+    width: 30%;
+    margin: auto;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5%;
+}
+.ranking-podium-item-icon {
+    position: relative;
+    display: block;
+    width: 49px;
+    height: 49px;
+    margin: 10px auto 0;
+}
+.ranking-podium-item-icon-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.ranking-podium-item-icon img {
+    border: 0;
+}
+.ranking-podium-item-summonerName {
+    display: block;
+    margin-top: 5px;
+    line-height: 17px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #bd5151;
+}
+.ranking-podium-item-level {
+    line-height: 25px;
+    font-family: Helvetica,AppleSDGothic,"Apple SD Gothic Neo",AppleGothic,Arial,Tahoma;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+.ranking-podium-item-tier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ranking-podium-item-tier img {
+    width: 25px;
+    vertical-align: middle;
+}
+.ranking-podium-item-tier span {
+    line-height: 14px;
+    font-size: 12px;
+    color: #666;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+.ranking-podium-item-tier b {
+    line-height: 14px;
+    font-size: 12px;
+    color: #666;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+.ranking-podium-item-winrate {
+    margin-top: 5px;
+}
+.ranking-podium-item-winrate .win-rate-progress-bar {
+    margin: auto;
+    width: 100%;
+}
+.ranking-podium-item .ranking-podium-item-rank {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+@media (max-width:650px) {
+    #page-content {
+        width: 100%;
+    }
+    .ranking-podium-item {
+        width: 100%;
+        margin-left: 0px;
+    }
 }

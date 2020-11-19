@@ -10,7 +10,7 @@ $(document).ready(async () => {
 })
 
 const fetchFreeChampionsFromAPI = async () => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/platform/v3/champion-rotations`)
+    return await fetch(`https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`)
         .then(resp => resp.json());
 }
 const fetchChampionsFromAPI = async () => {

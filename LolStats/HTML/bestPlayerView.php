@@ -4,7 +4,11 @@
         <a href="best-player.php?queue=Solo" id="solo-btn" class="navigation-btn selected">Solo/Duo</a>
         <a href="best-player.php?queue=Flex" id="flex-btn" class="navigation-btn">Flex</a>
     </div>
-    <hr style="width: calc(100px + 40vw) fit-content; background-color: #FFF;">
+    <hr style="width: calc(100px + 40vw) fit-content; background-color: #121212;">
+    <div class="ranking-podium">
+        <ul class="ranking-podium-list">
+        </ul>
+    </div>
     <div class="scrollable">
         <table class="ranking-table">
             <colgroup>

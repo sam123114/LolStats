@@ -9,7 +9,7 @@
     <p>Lol</p>
     <p>Stats</p>
   </div>
-  <ul>
+  <ul class="link-list">
     <a class='link' href='./'>Accueil</a>
     <a class='link' href='freeChampions.php'>Champions</a>
     <a class='link' href='best-player.php'>Meilleurs joueurs</a>

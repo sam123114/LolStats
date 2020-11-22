@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 let name = urlParams.get('name');
+let test = 0;
 $(document).ready(async () =>  {
     let infos = await fetchChampionsInfosFromAPI();
     displayInfos(infos.data[name]);

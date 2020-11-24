@@ -11,6 +11,7 @@ function load_styles($styleList){
         echo "<link rel='stylesheet' href='STYLES/$style'>";
     }
     echo "<link rel='stylesheet' href='STYLES/nav.css'>";
+    echo "<link rel='stylesheet' href='STYLES/footer.css'>";
 }
 function load_scripts($scriptList){
     foreach($scriptList as $script){

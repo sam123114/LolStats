@@ -1,0 +1,126 @@
+#page-content{
+    background-color: #FFF;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#header {
+    background: url(../IMG/about.jpg) no-repeat center center; 
+    background-size: cover;
+    height: 70%;
+    overflow-y: hidden;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 66%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header h1 {
+    color: #FFF;
+    font-size: 50px;
+}
+#header + div {
+    margin: 0 0 5% 15%;
+    width: 40%;
+    text-align: justify;
+}
+#header + div p {
+    font-size: 20px;
+}
+#devs {
+    color: #FFF;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5em 0 5em 0;
+}
+.dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+}
+.dev .img {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    transition: .5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#charles{
+    background-image: url('../IMG/devs/charles.jpg');
+}
+#samuel{
+    background-image: url('../IMG/devs/samuel.jpg');
+}
+.dev .img:hover{
+    background-color: #00ce2d;
+    background-blend-mode: darken;
+}
+.img .desc {
+    display: none;
+    font-size: 25px;
+}
+#features {
+    background-color: #FFF;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+#features h1 {
+    margin-top: 2em;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+#img-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10em;
+}
+.img-features {
+
+    width: 45%;
+    height: auto;
+}
+@media screen and (max-width: 1400px) {
+    #img-container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+    .img-features {
+        margin-top: 5em;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #header {
+        clip-path: unset;
+    }
+    #header + div {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 5em 0 5em 0;
+        width: 80%;
+        margin: 10%;
+    }
+    #devs {
+        flex-direction: column;
+        margin: 15em 0 15em 0;
+    }
+}

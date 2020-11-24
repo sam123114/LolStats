@@ -13,6 +13,7 @@
     <a class='link' href='./'>Accueil</a>
     <a class='link' href='freeChampions.php'>Champions</a>
     <a class='link' href='best-player.php'>Meilleurs joueurs</a>
+    <a class='link' href='about.php'>À propos</a>
     <?php
       if(isset($_SESSION['userId'])){
         echo "<div class='dropleft show'>
@@ -27,7 +28,7 @@
       </div>";
       }
       else{
-        echo "<a class='ins link'href='#'>S'inscrire</a>
+        echo "<a class='ins bg-secondary link'href='#'>S'inscrire</a>
               <a class='con bg-primary link' href='#'>Se connnecter</a>";
       }
     ?>
@@ -41,6 +42,7 @@
       <a class="dropdown-item" href="./">Accueil</a>
       <a class="dropdown-item" href="freeChampions.php">Champions</a>
       <a class="dropdown-item" href="best-player.php">Meilleurs joueurs</a>
+      <a class='dropdown-item' href='about.php'>À propos</a>
       <div class="dropdown-divider"></div>
       <?php
         if(isset($_SESSION['userId'])){

@@ -87,6 +87,7 @@ class User
         }
         $TDG = null;
         $_SESSION['msg'] = "Votre profil à été modifié averc succès";
+        $this->login($email,$npw);
         return;
     }
 }

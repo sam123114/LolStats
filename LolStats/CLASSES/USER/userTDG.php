@@ -69,7 +69,7 @@ class UserTDG extends DBAO{
             echo "Error: " . $e->getMessage();
         }
         $conn = null;
-        return $result;
+        return $result['PASSWORD'];
     }
     public function update($name, $email, $npw){
         try{
@@ -79,8 +79,7 @@ class UserTDG extends DBAO{
             $stmt->bindParam(1, $_SESSION['userId'], PDO::PARAM_INT, 10);
             $stmt->bindParam(2, $name, PDO::PARAM_STR, 60);
             $stmt->bindParam(3, $email, PDO::PARAM_STR, 60);
-            $stmt->bindParam(4, $pw, PDO::PARAM_STR, 200);
-            $stmt->execute();
+            $stmt->bindParam(4, $npw, PDO::PARAM_STR, 200);
             $stmt->execute();
             $resp = true;
         }

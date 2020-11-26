@@ -72,4 +72,22 @@ class User
         $_SESSION['msg'] = "Votre compte a été créé avec succès, vous pouvez maintenant vous connecter";
         return true;
     }
+    public function update($name,$email,$npw,$pw){
+
+        $TDG = UserTDG::getInstance();
+        $oldPassword = $TDG->getPassWordByUserId($_SESSION['userId']);
+        if (!password_verify($pw, $oldPassword)) {
+            $_SESSION['msg'] = "Mauvais ancien mot de passe entré";
+            return;
+        }
+        $resp = $TDG->update($name, $email, password_hash($npw, PASSWORD_DEFAULT));
+        if(!$resp){
+            $_SESSION['msg'] = "Une erreur s'est produite lors de la création du compte";
+            return;
+        }
+        $TDG = null;
+        $_SESSION['msg'] = "Votre profil à été modifié averc succès";
+        $this->login($email,$npw);
+        return;
+    }
 }

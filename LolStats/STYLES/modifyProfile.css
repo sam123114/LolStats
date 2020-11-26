@@ -4,23 +4,24 @@
     align-items: center;
     height: 75%;
 }
-#form {
+#formModify {
     width: 50%;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(255,255,255,.5);
-    padding: 1em;
+    border: 1px solid #FFF;
+    padding: 2em;
     background-color: #121212;
     color: #FFF;
+    border-radius: 1em;
 }
-#form h3 {
+#formModify h3 {
     align-self: center;
 
 }
-#form input {
+#formModify input {
     width: 100%;
 }
-#form button {
+#formModify button {
     width: 50%;
     align-self: center;
 }

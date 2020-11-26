@@ -26,7 +26,7 @@
             include_once "nav.php";      
             load_modules($content); 
             if($_SESSION['currentPage'] != 'index.php'){
-                include_once "footer.php";      
+                include_once "footer.php";
             } 
 
         ?>       

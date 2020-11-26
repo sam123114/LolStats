@@ -6,13 +6,21 @@
         die();
     }
 
-    $module = "summonerView.php";
-    $content = array();
-    array_push($content, $module);
+    if(strpos($_GET['summonerName'], ",") === false){
+        $module = 'summonerView.php';
+        $css = ['summoner.css'];
+        $js = ['summoner.js','loadSummonerData.js'];
+    } else {
+        $module = 'compareSummonersView.php';
+        $css = ['compareSummoners.css'];
+        $js = ['loadCompareSummoners.js'];
+    }
 
     $title = $_GET['summonerName'] . " - Summoner stats";
-    $styles = array('summoner.css');
-    $scripts = array('summoner.js','loadSummonerData.js');
+    $content = [];
+    array_push($content, $module);
+    $styles = $css;
+    $scripts = $js;
 
     require_once __DIR__ . "/HTML/masterpage.php";
 ?>

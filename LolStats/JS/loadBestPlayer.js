@@ -1,6 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 let queue = urlParams.get('queue');
 let data;
+let error;
 $(document).ready(async() => {
     if(queue == "Solo"){
         $('#solo-btn').addClass('selected');
@@ -18,6 +19,9 @@ $(document).ready(async() => {
         let res = await fetchSoloRanking();
         await displayData(res);
     }
+    if(error){
+        rateLimitExceeded();
+    }
 })
 
 const lowerCaseAllButFirst = (string) => {
@@ -27,18 +31,30 @@ const lowerCaseAllButFirst = (string) => {
 }
 
 const fetchSoloRanking = async () => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`)
+    let result = await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_SOLO_5x5`)
         .then(resp => resp.json());
+    if(result.status != undefined){
+        error = true;
+    }
+    return result;
 }
 
 const fetchFlexRanking = async () => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_FLEX_SR`)
+    let result = await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/league/v4/challengerleagues/by-queue/RANKED_FLEX_SR`)
         .then(resp => resp.json());
+    if(result.status != undefined){
+        error = true;
+    }
+    return result;
 }
 
 const fetchProfileInfoFromAPI = async (summonerName) => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/summoner/v4/summoners/${summonerName}`)
+    let result = await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/summoner/v4/summoners/${summonerName}`)
         .then(resp => resp.json());
+    if(result.status != undefined){
+        error = true;
+    }
+    return result;
 }
 
 const displayData = async (res) => {
@@ -90,7 +106,6 @@ const displayRankingPodium = async () => {
 
     for(let i = 0; i != 3; i++){
         let profile = await fetchProfileInfoFromAPI(data.entries[i].summonerId);
-        console.log(profile);
         $(`<li class="ranking-podium-item ranking-podium-item-${first ? `top` : `bot`}">`).append(
             $('<div class="ranking-podium-item-rank">').text(i + 1),
             $(' <div class="ranking-podium-item-icon">').html(
@@ -119,4 +134,8 @@ const displayRankingPodium = async () => {
         ).appendTo(list);
         first = false;
     }
+}
+
+const rateLimitExceeded = () => {
+    alert("Une erreur est survenue, la limite de requête que nous pouvons envoyer vers les serveur de Riot games a été atteinte. S'il vous plait, réessayer dans quelques minutes.")
 }

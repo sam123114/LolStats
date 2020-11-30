@@ -128,6 +128,14 @@
     padding-bottom: 10%;
 }
 
+.card-recent-matches {
+    height: 475px;
+}
+
+.card-info {
+    height: 200px;
+}
+
 .recent-title {
     color: #666;
     font-weight: bold;
@@ -139,13 +147,13 @@
 }
 
 .recent-games-container {
-    height: 400px;
     margin: auto;
     width: 100%;
 }
 
 .recent-games-item {
-    display: list-item;
+    display: flex;
+    justify-content: space-between;
     font-size: 0px;
     height: 40px;
     padding: 0;
@@ -173,7 +181,6 @@
     font-weight: bold;
     text-align: center;
     vertical-align: middle;
-    padding-left: 20px;
 }
 
 .time-played {
@@ -186,7 +193,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     box-sizing: border-box;
-    padding-left: 20px;
 }
 
 .win-true {
@@ -199,4 +205,44 @@
 
 ul, li {
     list-style: none;
+}
+
+@media (max-width:1566px) {
+    .page-container {
+        width: 100%;
+    }
+}
+
+@media (max-width:1250px) {
+    .compare-list {
+        flex-direction: column;
+    }
+    .compare-item {
+        margin: auto;
+    }
+}
+
+.loader-container {
+    position: fixed; 
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background:rgba(0,0,0,0.4)
+}
+
+.loader {
+    margin: 15% auto;
+    border: 16px solid #666;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    width: 120px;
+    height: 120px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

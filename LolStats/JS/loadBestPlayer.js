@@ -89,16 +89,17 @@ const displayRankingPodium = async () => {
     let first = true;
 
     for(let i = 0; i != 3; i++){
-        //let profile = await fetchProfileInfoFromAPI(data.entries[i].summonerName);
+        let profile = await fetchProfileInfoFromAPI(data.entries[i].summonerName.replace(" ", ""));
+        console.log(profile);
         $(`<li class="ranking-podium-item ranking-podium-item-${first ? `top` : `bot`}">`).append(
             $('<div class="ranking-podium-item-rank">').text(i + 1),
-            /*$(' <div class="ranking-podium-item-icon">').html(
+            $(' <div class="ranking-podium-item-icon">').html(
                 $('<a href="#">').html(
                     $(`<img src="//opgg-static.akamaized.net/images/profile_icons/profileIcon${profile.profileIconId}.jpg?image=c_scale,q_auto&v=1518361200" alt="icon" class="ranking-podium-item-icon-image">`)
                 )
-            ),*/
+            ),
             $(`<a href="summoner.php?summonerName=${data.entries[i].summonerName}" class="ranking-podium-item-summonerName">`).text(data.entries[i].summonerName),
-            /*$(`<div class="ranking-podium-item-level">`).text(`Lv.${profile.summonerLevel}`),*/
+            $(`<div class="ranking-podium-item-level">`).text(`Lv.${profile.summonerLevel}`),
             $(`<div class="ranking-podium-item-tier">`).append(
                 $(`<img src="IMG/Emblems/${data.tier}.png" alt="summoner rank icon">`),
                 $(`<span>`).text(` ${lowerCaseAllButFirst(data.tier)}`),

@@ -71,6 +71,22 @@ class UserTDG extends DBAO{
         $conn = null;
         return $result['PASSWORD'];
     }
+    public function confirm_account($email){
+        try{
+            $conn = $this->connect();
+            $query = 'call confirmAccount(?)';
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(1, $email, PDO::PARAM_STR, 60);
+            $stmt->execute();
+            $resp = true;
+        }
+        catch(PDOException $e)
+        {
+           $resp = false;
+        }
+        $conn = null;
+        return $resp;
+    }
     public function update($name, $email, $npw){
         try{
             $conn = $this->connect();

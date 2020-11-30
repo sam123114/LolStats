@@ -17,7 +17,7 @@
             <label>Ancien mot de passe</label>
             <input type="password" class="form-control" name="pw" placeholder="Ancien mot de passe">
         </div>
-        <button type="submit" class="btn btn-primary" id="submitCon">Mettre à jour mes informations</button>
+        <button type="submit" class="btn btn-primary" id="submitProfile">Mettre à jour mes informations</button>
     </form>
 </div>
 

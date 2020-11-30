@@ -8,6 +8,7 @@ class User
     private $email;
     private $userName;
     private $pw;
+    private $isConfirmed;
 
     public function __construct(){}
 
@@ -26,19 +27,20 @@ class User
         $this->email = $res['email'];
         $this->userName = $res['username'];
         $this->pw = $res['password'];
+        $this->isConfirmed = $res['isConfirmed'];
 
         $TDG = null;
         return true;
     }
-
-
-    //Login Validation
     public function login($email, $pw)
     {
         if (!$this->load_user($email)) {
             return false;
         }
-
+        if(!$this->isConfirmed){
+            $_SESSION['msg'] = "Votre compte doit être vérifié pour pouvoir vous connnecter. Il se peut que l'email de confirmation soit dans vos courriers indésirables";
+            return false;
+        }
         if (!password_verify($pw, $this->pw)) {
             $_SESSION['msg'] = "Mot de passe incorrect!";
             return false;
@@ -69,8 +71,33 @@ class User
             return false;
         }
         $TDG = null;
-        $_SESSION['msg'] = "Votre compte a été créé avec succès, vous pouvez maintenant vous connecter";
+        $this->send_mail($email);
+        $_SESSION['msg'] = "Votre compte a été créé avec succès, nous vous avons envoyer un email de confirmation afin de vous connnecter";
         return true;
+    }
+    public function send_mail($email){
+        $subject = 'Email de confirmation';
+        $message = "
+        <h1>Email de confirmation</h1>
+        <p>
+        Merci de votre inscription sur LolStats<br>
+        Veuillez confirmer votre inscription en cliquant sur le bouton ci-desssous
+        </p>
+        <div style=' background-color: #00BFFF; width: auto; padding: 20px; text-align: center'>
+            <a style='color: #FFF; text-decoration: none;'  href='http://167.114.152.54/~LolStats01/LOGIC/confirmAccount.logic.php?email=$email' target='_blank'>V&#233rifier mon compte</a>
+        </div>
+        ";
+        $headers = 'From: LolStats' . "\r\n" .
+        'Content-type: text/html; charset=utf8mb4' . 
+        'X-Mailer: PHP/' . phpversion();
+    
+        mail($email, $subject, $message, $headers);
+    }
+    public function confirm_account($email){
+        $TDG = UserTDG::getInstance();
+        $TDG->confirm_account($email);
+        $TDG = null;
+        return;
     }
     public function update($name,$email,$npw,$pw){
 

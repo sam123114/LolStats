@@ -25,6 +25,12 @@
         </div>
     </div>
 </div>
+<div class="white-space">
+</div>
+<div id='video'>
+    <h1>Video de présentation</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nNtajgwuF1A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <div id='features'>
     <h1>Voici quelques fonctionnalités</h1>
     <div id="img-container">

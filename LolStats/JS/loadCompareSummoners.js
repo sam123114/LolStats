@@ -12,7 +12,6 @@ $(document).ready(async() => {
             displayCard(summoner, i);
         }
     }
-    console.log(error);
     if(error){
         rateLimitExceeded();
     }

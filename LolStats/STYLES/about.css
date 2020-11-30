@@ -37,6 +37,24 @@
     justify-content: space-around;
     margin: 5em 0 5em 0;
 }
+#video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+#video h1{
+    margin-top: 5%;
+}
+#video iframe{
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+.white-space {
+    height: 10em;
+    background-color: #FFF;
+}
 .dev {
     display: flex;
     flex-direction: column;

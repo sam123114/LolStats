@@ -37,7 +37,7 @@ const fetchFlexRanking = async () => {
 }
 
 const fetchProfileInfoFromAPI = async (summonerName) => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}`)
+    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/summoner/v4/summoners/${summonerName}`)
         .then(resp => resp.json());
 }
 
@@ -89,7 +89,7 @@ const displayRankingPodium = async () => {
     let first = true;
 
     for(let i = 0; i != 3; i++){
-        let profile = await fetchProfileInfoFromAPI(data.entries[i].summonerName.replace(" ", ""));
+        let profile = await fetchProfileInfoFromAPI(data.entries[i].summonerId);
         console.log(profile);
         $(`<li class="ranking-podium-item ranking-podium-item-${first ? `top` : `bot`}">`).append(
             $('<div class="ranking-podium-item-rank">').text(i + 1),

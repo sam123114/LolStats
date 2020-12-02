@@ -515,6 +515,3 @@ const displayLiveGame = async (currentGameInfo) => {
     `).show('slow');
 }
 
-const displayDetailedRunes = (e, perks) => {
-    console.log(perks);
-}

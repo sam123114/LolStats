@@ -14,11 +14,22 @@ $(document).ready(() => {
 
 const arrowToggle = (e, matchList) => {
     const match = matchList[e.id];
+    console.log(match);
     const {participantIdentities,participants} = match;
     const gameDuration = match.gameDuration/60;
+    let team1VictoryStatus = '';
+    let team2VictoryStatus = '';
+    if(match.teams[0].win == 'Win'){
+        team1VictoryStatus = 'Victoire';
+        team2VictoryStatus = 'Défaite';
+    }
+    else{
+        team1VictoryStatus = 'Défaite';
+        team2VictoryStatus = 'Victoire';
+    }
     let extraInfos = `<div class='matchExtraInfo'><table class="table table-striped table-dark">
                     <tr>
-                        <th colspan="3">Victoire Équipe Bleu</th>
+                        <th colspan="3">${team1VictoryStatus}</th>
                         <th>KDA</th>
                         <th>Dégats</th>
                         <th>CS</th>
@@ -46,7 +57,7 @@ const arrowToggle = (e, matchList) => {
         if(i == 5)
             extraInfos+= `</table><table class="table table-striped table-dark">
                         <tr>
-                            <th colspan="3">Défaite Équipe Rouge</th>
+                            <th colspan="3">${team2VictoryStatus}</th>
                             <th>KDA</th>
                             <th>Dégats</th>
                             <th>CS</th>

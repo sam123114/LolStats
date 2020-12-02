@@ -1,6 +1,9 @@
 <?php
     include_once __DIR__ . "/../UTILS/loader.php";
-    $_SESSION['currentPage'] = basename($_SERVER['PHP_SELF']);
+    $_SESSION['currentPage'] = basename($_SERVER['PHP_SELF']) . '?';
+    foreach($_GET as $key => $value){
+        $_SESSION['currentPage'] .= $key .'=' . $value . '&';
+    }
 ?>
 <html>
     <head>

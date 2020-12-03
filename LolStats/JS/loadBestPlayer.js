@@ -7,21 +7,31 @@ $(document).ready(async() => {
         $('#solo-btn').addClass('selected');
         $('#flex-btn').removeClass('selected');
         let res = await fetchSoloRanking()
+        if(error){
+            rateLimitExceeded();
+            return;
+        }
         await displayData(res);
     } else if(queue == "Flex"){
         $('#solo-btn').removeClass('selected');
         $('#flex-btn').addClass('selected');
         let res = await fetchFlexRanking()
+        if(error){
+            rateLimitExceeded();
+            return;
+        }
         await displayData(res);
     } else {
         $('#solo-btn').addClass('selected');
         $('#flex-btn').removeClass('selected');
         let res = await fetchSoloRanking();
+        if(error){
+            rateLimitExceeded();
+            return;
+        }
         await displayData(res);
     }
-    if(error){
-        rateLimitExceeded();
-    }
+    $(`.loader-container`).hide();
 })
 
 const lowerCaseAllButFirst = (string) => {

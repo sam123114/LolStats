@@ -1,4 +1,5 @@
 <div id="page-content">
+    <div class="loader-container"><div class="loader"></div></div>
     <h3 id="title">Classement des meilleurs joueurs</h3>
     <div class="navigation-group">
         <a href="best-player.php?queue=Solo" id="solo-btn" class="navigation-btn selected">Solo/Duo</a>

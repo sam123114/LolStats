@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-let summonerNames = urlParams.get('summonerName').split(",");
+let summonerNames = urlParams.get('summonerName').replaceAll(" ", "").split(",");
 let champions;
 let error;
 $(document).ready(async() => {
@@ -7,7 +7,7 @@ $(document).ready(async() => {
     for(let i = 0; i != 5; i++){
         let summoner;
         if(summonerNames[i] != undefined)
-            summoner = await fetchSummonerInfoFromAPI(summonerNames[i].replace(" ", ""));
+            summoner = await fetchSummonerInfoFromAPI(summonerNames[i]);
         if(summoner != undefined && summoner.status == undefined){
             displayCard(summoner, i);
         }

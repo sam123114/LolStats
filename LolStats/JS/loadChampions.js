@@ -1,17 +1,24 @@
 let champions;
+let error = false;
 $(document).ready(async () => {
     
     let freeChampions = await fetchFreeChampionsFromAPI();
     champions = await fetchChampionsFromAPI();
-
+    if(error){
+        rateLimitExceeded();
+        return;
+    }
     freeChampions = freeChampions.freeChampionIds.map(id => getChampionInfosFromId(id));
     displayFreeChampions(freeChampions);
-    console.log(freeChampions);
 })
 
 const fetchFreeChampionsFromAPI = async () => {
-    return await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/platform/v3/champion-rotations`)
+    let result = await fetch(`${urlFetcher}?url=https://na1.api.riotgames.com/lol/platform/v3/champion-rotations`)
         .then(resp => resp.json());
+    if(result.status != undefined){
+        error = true;
+    }
+    return result;
 }
 const fetchChampionsFromAPI = async () => {
     return await fetch('http://ddragon.leagueoflegends.com/cdn/10.23.1/data/en_US/champion.json')
@@ -36,4 +43,8 @@ const displayFreeChampions = (freeChampions) => {
     display += '</div>';    
 
     $('#page-content').append(display);
+}
+
+const rateLimitExceeded = () => {
+    alert("Une erreur est survenue, la limite de requête que nous pouvons envoyer vers les serveur de Riot games a été atteinte. S'il vous plait, réessayer dans quelques minutes.")
 }
